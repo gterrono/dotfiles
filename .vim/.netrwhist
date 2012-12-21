@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/alexanderterrono/Desktop/dcgae'
 let g:netrw_dirhist_2='/Users/alexanderterrono/Dropbox/Spring 2012/CIS 277/Homework/CIS277Code/HW1/HW1.xcodeproj'
 let g:netrw_dirhist_3='/Users/alexanderterrono/Desktop/dcgae'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/Users/alexanderterrono/pre-essaysafe/web'
 let g:netrw_dirhist_5='/Users/alexanderterrono/pre-essaysafe/web/EssaySafe'
 let g:netrw_dirhist_6='/Users/alexanderterrono/dcgae2'
 let g:netrw_dirhist_7='/Users/alexanderterrono/dcgae'
+let g:netrw_dirhist_8='/home/greg/cis120/hw_submissions/hw2/ztaub'
+let g:netrw_dirhist_9='/home/greg/cis120/hw_submissions/hw8/justc'

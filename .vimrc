@@ -13,22 +13,18 @@ syntax on
 filetype on
 filetype plugin on
 
-map <up> <nop>
-map <down> <nop>
-map <silent> <left> :tabp <CR>
-map <silent> <right> :tabn <CR>
-
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <up> :wincmd k<CR>
+nmap <silent> <down> :wincmd j<CR>
+nmap <silent> <left> :wincmd h<CR>
+nmap <silent> <right> :wincmd l<CR>
 
 map qq :wq<CR>
 map Q :q<CR>
 map mks :mksession! sess<CR>
 autocmd FileType ruby map z :w<CR> :!ruby -c %<CR>
 
-map! ii <Esc>
+map! jk <Esc>
+map! kj <Esc>
 
 map :W :w
 map :Q :q

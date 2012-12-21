@@ -130,6 +130,20 @@ alias fd='find . -name'
 alias aws='ssh -i ~/.ssh/GregVaio.pem ubuntu@ec2-50-19-185-231.compute-1.amazonaws.com'
 alias vs='vim -S sess'
 
+function copy {
+  if [ -f $1 ];
+  then
+    cp $1 ~/copy-things/
+    cd ~/copy-things/
+    git add $1
+    git commit -m $1
+    git push origin master
+    cd -
+  else
+    echo "File $1 does not exist."
+  fi
+}
+
 function branch {
 echo $(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3)
 }
@@ -139,3 +153,4 @@ export PS1="\u:\W \$(branch)\[\e[0;32m\] $\[\e[0m\] "
 alias gpb="git push origin $(branch)"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:~/cis120/12fa/tools
