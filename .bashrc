@@ -82,6 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias ls='ls -CFG'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -112,23 +113,25 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source ~/git-completion.bash
 
 alias gc="git commit -m"
-alias gl="git lg | head -n 40"
+alias gl="git lg | head -n 40; echo"
 alias ga="git add"
 alias gs="git status"
 alias gph="git push"
+alias gphm="git push origin master"
 alias gpl="git pull"
 alias gplm="git pull origin master"
 alias gco="git checkout"
 alias gher='git push heroku master'
 
-alias la='ls -a'
-alias lal='ls -al'
-alias ll='ls -l'
-
 alias cl='cd ^!; la'
 alias fd='find . -name'
 alias aws='ssh -i ~/.ssh/GregVaio.pem ubuntu@ec2-50-19-185-231.compute-1.amazonaws.com'
 alias vs='vim -S sess'
+alias code='cd ~/Code'
+alias reload='source ~/.bash_profile'
+alias ocaml='rlwrap ocaml'
+alias ip='ipython'
+alias actionio='ssh action@use1.actionbox.io -p 11778'
 
 function copy {
   if [ -f $1 ];
@@ -144,8 +147,17 @@ function copy {
   fi
 }
 
+function db {
+  if [ -f $1 ];
+  then
+    cp $1 ~/Dropbox/command-line
+  else
+    echo "File $1 does not exist."
+  fi
+}
+
 function branch {
-echo $(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3)
+  echo $(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3)
 }
 
 export PS1="\u:\W \$(branch)\[\e[0;32m\] $\[\e[0m\] "
@@ -153,4 +165,13 @@ export PS1="\u:\W \$(branch)\[\e[0;32m\] $\[\e[0m\] "
 alias gpb="git push origin $(branch)"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:~/cis120/12fa/tools
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+#Adding node and npm packages to path
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH"
+
+#Adding pip packages to path
+export PATH="/usr/local/share/python:$PATH"
+

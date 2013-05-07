@@ -8,9 +8,11 @@ set expandtab
 set hlsearch
 set incsearch
 set hidden
+set nocompatible
 
 syntax on
 filetype on
+filetype indent on
 filetype plugin on
 
 nmap <silent> <up> :wincmd k<CR>
@@ -22,6 +24,11 @@ map qq :wq<CR>
 map Q :q<CR>
 map mks :mksession! sess<CR>
 autocmd FileType ruby map z :w<CR> :!ruby -c %<CR>
+au FileType python setl sw=4 sts=4 et
+
+" When writing a file, if there are errors, have Syntastic plugin mark them
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
 
 map! jk <Esc>
 map! kj <Esc>

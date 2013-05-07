@@ -34,4 +34,7 @@ export PATH
 #Adding Scala to the path
 PATH="/usr/scala-2.9.2/bin:${PATH}"
 
+#Adding llvm to the path
+PATH="/Users/greg/Downloads/clang+llvm-3.2-x86_64-apple-darwin11/bin:${PATH}"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
