@@ -35,5 +35,6 @@ map! kj <Esc>
 
 map :W :w
 map :Q :q
+map :p :set paste!
 
 :nnoremap <Space> :exec "normal i".nr2char(getchar())."\e"<CR>

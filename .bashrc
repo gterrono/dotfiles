@@ -120,6 +120,7 @@ alias gph="git push"
 alias gphm="git push origin master"
 alias gpl="git pull"
 alias gplm="git pull origin master"
+alias grb="git pull --rebase"
 alias gco="git checkout"
 alias gher='git push heroku master'
 

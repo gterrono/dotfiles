@@ -8,6 +8,7 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   co = checkout
   cm = commit
+  sync = !git fetch && git rebase origin/master
 [color]
   ui = auto
 [push]
