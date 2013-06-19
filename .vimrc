@@ -49,6 +49,8 @@ cmap w!! w !sudo tee > /dev/null %
 " indicate lines over 80
 match ErrorMsg /\%>80v.\+/
 
-let mapleader=","
+let mapleader=";"
 let g:CommandTCancelMap=['<ESC>','<C-c>']
-map <C-t> ,t
+map <silent> <C-t> :tabe<CR>
+
+map <Leader>f _f
