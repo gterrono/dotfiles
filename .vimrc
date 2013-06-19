@@ -51,3 +51,4 @@ match ErrorMsg /\%>80v.\+/
 
 let mapleader=","
 let g:CommandTCancelMap=['<ESC>','<C-c>']
+map <C-t> ,t
