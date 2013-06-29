@@ -9,6 +9,8 @@ set hlsearch
 set incsearch
 set hidden
 set nocompatible
+set cursorline
+set mouse=a
 
 syntax on
 filetype on
@@ -40,7 +42,20 @@ map <tab> gt
 
 map :W :w
 map :Q :q
+map :p :set paste!
+map <S-Left> gT
+map <S-Right> gt
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 map :p<CR> :set paste!<CR>
 
 :nnoremap <Space> :exec "normal i".nr2char(getchar())."\e"<CR>
+
+" indicate lines over 80
+match ErrorMsg /\%>80v.\+/
+
+let mapleader=","
+let g:CommandTCancelMap=['<ESC>','<C-c>']
+map <C-t> ,t

@@ -120,7 +120,9 @@ alias gph="git push"
 alias gphm="git push origin master"
 alias gpl="git pull"
 alias gplm="git pull origin master"
+alias grb="git pull --rebase"
 alias gco="git checkout"
+alias gsq="git rebase -i HEAD~2"
 alias gher='git push heroku master'
 
 alias cl='cd ^!; la'
@@ -132,6 +134,10 @@ alias reload='source ~/.bash_profile'
 alias ocaml='rlwrap ocaml'
 alias ip='ipython'
 alias actionio='ssh action@use1.actionbox.io -p 11778'
+
+function vol {
+  osascript -e "set volume $1"
+}
 
 function copy {
   if [ -f $1 ];
