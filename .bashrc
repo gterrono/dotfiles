@@ -175,3 +175,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/shar
 #Adding pip packages to path
 export PATH="/usr/local/share/python:$PATH"
 
+#Adding adb and fastboot
+export PATH="~/Downloads/adt-bundle-mac-x86_64-20130514/sdk/platform-tools:$PATH"
+
+export PATH=${PATH}:~/bin
