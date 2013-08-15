@@ -59,7 +59,7 @@ map! <right> <nop>
 map :W :w
 map :Q :q
 map <silent> <leader>wq :wq<CR>
-map <silent> <leader>w :w<CR>
+map <silent> <leader><CR> :w<CR>
 map <silent> <leader>p :set paste!<CR>
 map <S-Left> gT
 map <S-Right> gt
@@ -101,6 +101,9 @@ map <leader>'x 'X
 map <silent> <leader>v :vs<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>r :set relativenumber<CR>
-map <silent> <leader><cr> :noh<cr>
+map <silent> <leader>n :noh<CR>
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
+
+map j gj
+map k gk
