@@ -105,6 +105,9 @@ map <leader>'x 'X
 map <silent> <leader>v :vs<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>r :set relativenumber<CR>
-map <silent> <leader>n :noh<cr>
+map <silent> <leader>n :noh<CR>
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
+
+map j gj
+map k gk
