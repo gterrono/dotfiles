@@ -109,5 +109,6 @@ map <silent> <leader>n :noh<CR>
 map <leader>bn :bn<CR>
 map <leader>bp :bp<CR>
 
-map j gj
-map k gk
+au VimEnter * syntax keyword Statement lambda conceal cchar=λ
+au VimEnter * hi! link Conceal Statement
+au VimEnter * set conceallevel=2

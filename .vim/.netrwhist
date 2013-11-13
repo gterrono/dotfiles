@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/greg/Code/pennapps-portal/app/views/devise/sessions'
 let g:netrw_dirhist_2='/Users/greg/Code/pennapps-portal/app/views/projects'
 let g:netrw_dirhist_3='/Users/greg/Code/microscope/server'
+let g:netrw_dirhist_4='/Users/greg/Code/interndinners'
+let g:netrw_dirhist_5='/Users/greg/Code/interndinners/packages'
+let g:netrw_dirhist_6='/Users/greg/Code/zma-test/packages'
+let g:netrw_dirhist_7='/Users/greg/Code/express-mongo/views'
+let g:netrw_dirhist_8='/Users/greg/Code/meteor-admin-ui/collections'
+let g:netrw_dirhist_9='/Users/greg/Code/meteor-admin-ui'

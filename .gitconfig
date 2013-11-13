@@ -1,6 +1,6 @@
 [user]
 	name = Greg Terrono
-	email = gterrono@seas.upenn.edu
+	email = terronogr@gmail.com
 [core]
 	excludesfile = ./.gitignore
 	editor = vim

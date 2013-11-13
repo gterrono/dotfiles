@@ -47,3 +47,5 @@ PATH="/Users/greg/Downloads/clang+llvm-3.2-x86_64-apple-darwin11/bin:${PATH}"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+# Adding mongodb
+PATH="/Users/greg/Downloads/mongodb-osx-x86_64-2.4.6/bin:${PATH}"
