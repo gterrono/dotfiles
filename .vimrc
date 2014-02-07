@@ -43,9 +43,9 @@ au FileType python setl sw=4 sts=4 et
 au FileType javascript setl sw=4 sts=4 et
 
 " When writing a file, if there are errors, have Syntastic plugin mark them
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map={ 'mode': 'active',
+" let g:syntastic_enable_signs=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
                      \ 'passive_filetypes': ['html'] }
 
