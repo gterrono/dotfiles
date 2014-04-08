@@ -40,7 +40,7 @@ nmap <right> <nop>
 map mks :mksession! sess<CR>
 autocmd FileType ruby map z :w<CR> :!ruby -c %<CR>
 au FileType python setl sw=4 sts=4 et
-au FileType javascript setl sw=4 sts=4 et
+au FileType javascript setl sw=2 sts=2 et
 
 " When writing a file, if there are errors, have Syntastic plugin mark them
 " let g:syntastic_enable_signs=1
@@ -60,9 +60,15 @@ map <tab> gt
 
 map :W :w
 map :Q :q
-map <silent> <leader>wq :wq<CR>
-map <silent> <leader><CR> :w<CR>
-map <silent> <leader>p :set paste!<CR>
+
+function! TrimWhiteSpace()
+  %s/\s*$//
+:endfunction
+map <silent> <leader>q :q<CR>
+map <leader>wq :call TrimWhiteSpace()<CR>:wq<CR>
+map <leader><CR> mv:call TrimWhiteSpace()<CR>`v:w<CR>
+map <silent> <leader><Space> mv:call TrimWhiteSpace()`v<CR>
+map <leader>p :set paste!<CR>
 map <S-Left> gT
 map <S-Right> gt
 
@@ -75,10 +81,11 @@ cmap w!! w !sudo tee > /dev/null %
 
 map :p<CR> :set paste!<CR>
 
-:nnoremap <Space> :exec "normal i".nr2char(getchar())."\e"<CR>
+:nnoremap <silent> <Space> :exec "normal i".nr2char(getchar())."\e"<CR>
 
-" indicate lines over 80
+" indicate klines over 80
 match ErrorMsg /\%>80v.\+/
+match ErrorMsg /\s\+$/
 
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 map <silent> <C-t> :tabe<CR>
@@ -106,9 +113,12 @@ map <silent> <leader>v :vs<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>r :set relativenumber<CR>
 map <silent> <leader>n :noh<CR>
-map <leader>bn :bn<CR>
-map <leader>bp :bp<CR>
+map <silent> <leader>bn :bn<CR>
+map <silent> <leader>bp :bp<CR>
 
 au VimEnter * syntax keyword Statement lambda conceal cchar=λ
 au VimEnter * hi! link Conceal Statement
 au VimEnter * set conceallevel=2
+
+map :vim<CR> :tabe ~/.vimrc<CR>
+map :reload :so ~/.vimrc<CR>

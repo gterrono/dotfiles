@@ -2,7 +2,7 @@
 	name = Greg Terrono
 	email = terronogr@gmail.com
 [core]
-	excludesfile = ./.gitignore
+	excludesfile = /Users/greg/.gitignore_global
 	editor = vim
 	autocrlf = input
 [alias]

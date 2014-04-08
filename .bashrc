@@ -115,29 +115,34 @@ source ~/git-completion.bash
 alias gc="git commit -m"
 alias gl="git lg | head -n 40; echo"
 alias ga="git add"
-alias gs="git status"
+alias gap="git add . -p"
+alias gs="git status -s"
 alias gst="git status"
+alias gd="git diff"
 alias gph="git push"
 alias gphm="git push origin master"
 alias gpl="git pull"
 alias gplm="git pull origin master"
+alias gplu="git pull upstream master"
 alias grb="git pull --rebase"
 alias gco="git checkout"
 alias gsq="git rebase -i HEAD~2"
 alias gpr="ga .; gc \"pr\"; gsq"
 alias gher='git push heroku master'
 
+alias chrome='/Applications/"Google Chrome"'
 alias cl='cd ^!; la'
 alias fd='find . -name'
 alias aws='ssh -i ~/.ssh/GregVaio.pem ubuntu@ec2-50-19-185-231.compute-1.amazonaws.com'
 alias vs='vim -S sess'
 alias code='cd ~/Code'
-alias reload='source ~/.bash_profile'
+alias reload='unalias -a; source ~/.bash_profile'
 alias ocaml='rlwrap ocaml'
 alias ip='ipython'
 alias actionio='ssh action@use1.actionbox.io -p 11778'
 alias v="vim"
 alias gitvim="vim `git status | grep modified | awk '{print $3}'`"
+alias local="./node_modules/.bin/zuul --local 9005 -- test/*.js"
 
 function vol {
   osascript -e "set volume $1"
@@ -172,7 +177,9 @@ function branch {
 
 export PS1="\u:\W \$(branch)\[\e[0;32m\] $\[\e[0m\] "
 
-alias gpb="git push origin $(branch)"
+function gpb {
+  git push origin $(branch)
+}
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
