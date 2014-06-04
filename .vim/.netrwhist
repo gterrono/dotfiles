@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/greg/Code/meteor-admin-ui/.git/refs/remotes/origin'
-let g:netrw_dirhist_2='/Users/greg/Dropbox/Spring 2014/CIS 197/hw-solutions'
-let g:netrw_dirhist_3='/Users/greg/Dropbox/Spring 2014/CIS 197/hw-solutions/hw2'
-let g:netrw_dirhist_4='/Users/greg/Dropbox/Spring 2014/CIS 197/hw-solutions'
-let g:netrw_dirhist_5='/Users/greg/Dropbox/Spring 2014/CIS 197/hw-solutions/hw1'
-let g:netrw_dirhist_6='/Users/greg/Dropbox/Spring 2014/CIS 331/hw2'

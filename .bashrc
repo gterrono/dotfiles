@@ -127,7 +127,6 @@ alias gplu="git pull upstream master"
 alias grb="git pull --rebase"
 alias gco="git checkout"
 alias gsq="git rebase -i HEAD~2"
-alias gpr="ga .; gc \"pr\"; gsq"
 alias gher='git push heroku master'
 
 alias chrome='/Applications/"Google Chrome"'
@@ -143,6 +142,13 @@ alias actionio='ssh action@use1.actionbox.io -p 11778'
 alias v="vim"
 alias gitvim="vim `git status | grep modified | awk '{print $3}'`"
 alias local="./node_modules/.bin/zuul --local 9005 -- test/*.js"
+
+alias gum="cd Code/gumroad/web"
+alias vs="vagrant ssh"
+alias vu="vagrant up"
+
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 function vol {
   osascript -e "set volume $1"
@@ -179,6 +185,10 @@ export PS1="\u:\W \$(branch)\[\e[0;32m\] $\[\e[0m\] "
 
 function gpb {
   git push origin $(branch)
+}
+
+function gfpb {
+  git push --force origin $(branch)
 }
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

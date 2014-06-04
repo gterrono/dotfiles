@@ -32,10 +32,10 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
-nmap <up> <nop>
-nmap <down> <nop>
-nmap <left> <nop>
-nmap <right> <nop>
+" nmap <up> <nop>
+" nmap <down> <nop>
+" nmap <left> <nop>
+" nmap <right> <nop>
 
 map mks :mksession! sess<CR>
 autocmd FileType ruby map z :w<CR> :!ruby -c %<CR>
@@ -51,10 +51,10 @@ au FileType javascript setl sw=2 sts=2 et
 
 map! jk <Esc>
 map! kj <Esc>
-map! <up> <nop>
-map! <down> <nop>
-map! <left> <nop>
-map! <right> <nop>
+" map! <up> <nop>
+" map! <down> <nop>
+" map! <left> <nop>
+" map! <right> <nop>
 
 map <tab> gt
 
@@ -62,7 +62,7 @@ map :W :w
 map :Q :q
 
 function! TrimWhiteSpace()
-  %s/\s*$//
+  " %s/\s*$//
 :endfunction
 map <silent> <leader>q :q<CR>
 map <leader>wq :call TrimWhiteSpace()<CR>:wq<CR>
@@ -109,7 +109,7 @@ map <leader>'c 'C
 map <leader>'z 'Z
 map <leader>'x 'X
 
-map <silent> <leader>v :vs<CR>
+noremap <silent> <leader>v :vs<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>r :set relativenumber<CR>
 map <silent> <leader>n :noh<CR>
@@ -120,5 +120,11 @@ au VimEnter * syntax keyword Statement lambda conceal cchar=λ
 au VimEnter * hi! link Conceal Statement
 au VimEnter * set conceallevel=2
 
-map :vim<CR> :tabe ~/.vimrc<CR>
-map :reload :so ~/.vimrc<CR>
+command Vim tabe ~/.vimrc
+command Reload so ~/.vimrc
+map :v :V
+map :r :R
+
+noremap <up> <up>
+noremap <down> <down>
+runtime macros/matchit.vim
