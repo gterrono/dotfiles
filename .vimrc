@@ -16,6 +16,7 @@ set incsearch
 set hidden
 set nocompatible
 set cursorline
+set ls=2
 
 syntax on
 filetype on

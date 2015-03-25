@@ -114,7 +114,7 @@ source ~/git-completion.bash
 
 alias gc="git commit -m"
 alias gl="git lg | head -n 40; echo"
-alias ga="git add"
+alias ga="git add -A"
 alias gap="git add . -p"
 alias gs="git status -s"
 alias gst="git status"
@@ -140,15 +140,20 @@ alias ocaml='rlwrap ocaml'
 alias ip='ipython'
 alias actionio='ssh action@use1.actionbox.io -p 11778'
 alias v="vim"
-alias gitvim="vim `git status | grep modified | awk '{print $3}'`"
 alias local="./node_modules/.bin/zuul --local 9005 -- test/*.js"
 
-alias gum="cd Code/gumroad/web"
+alias gum="cd ~/Code/gumroad/web"
 alias vs="vagrant ssh"
 alias vu="vagrant up"
 
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+alias bashrc='vim ~/.bashrc'
+
+function gitvim {
+  vim `git status | grep modified | awk '{print $3}'`
+}
 
 function vol {
   osascript -e "set volume $1"
@@ -187,6 +192,10 @@ function gpb {
   git push origin $(branch)
 }
 
+function gplb {
+  git pull origin $(branch)
+}
+
 function gfpb {
   git push --force origin $(branch)
 }
@@ -203,6 +212,8 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/shar
 export PATH="/usr/local/share/python:$PATH"
 
 #Adding adb and fastboot
-export PATH="~/Downloads/adt-bundle-mac-x86_64-20130514/sdk/platform-tools:$PATH"
+#export PATH="~/Downloads/adt-bundle-mac-x86_64-20130514/sdk/platform-tools:$PATH"
 
 export PATH=${PATH}:~/bin
+
+export PATH="$PATH:/Applications/Android Studio.app/sdk/platform-tools"
