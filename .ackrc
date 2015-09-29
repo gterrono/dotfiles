@@ -1,2 +1,3 @@
 --type-set=coffee=.coffee
 --type-set=erb=.erb
+--type-set=scss=.scss

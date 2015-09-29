@@ -41,6 +41,8 @@ nmap <silent> <C-l> :wincmd l<CR>
 map mks :mksession! sess<CR>
 autocmd FileType ruby map z :w<CR> :!ruby -c %<CR>
 au FileType python setl sw=4 sts=4 et
+au FileType python map <leader>tf :s/True/False/g<CR>:noh<CR>
+au FileType python map <leader>ft :s/False/True/g<CR>:noh<CR>
 au FileType javascript setl sw=2 sts=2 et
 
 " When writing a file, if there are errors, have Syntastic plugin mark them
@@ -58,6 +60,7 @@ map! kj <Esc>
 " map! <right> <nop>
 
 map <tab> gt
+map <S-tab> gT
 
 map :W :w
 map :Q :q
@@ -111,6 +114,7 @@ map <leader>'z 'Z
 map <leader>'x 'X
 
 noremap <silent> <leader>v :vs<CR>
+noremap <silent> <leader>h :sp<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>r :set relativenumber<CR>
 map <silent> <leader>n :noh<CR>
@@ -129,3 +133,5 @@ map :r :R
 noremap <up> <up>
 noremap <down> <down>
 runtime macros/matchit.vim
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
