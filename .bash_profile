@@ -48,3 +48,5 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # Adding mongodb
 PATH="/Users/greg/Downloads/mongodb-osx-x86_64-2.4.6/bin:${PATH}"
+
+export PATH=/Users/greg/Library/Android/sdk/platform-tools:$PATH
