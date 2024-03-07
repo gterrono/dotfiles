@@ -140,7 +140,6 @@ alias ocaml='rlwrap ocaml'
 alias ip='ipython'
 alias actionio='ssh action@use1.actionbox.io -p 11778'
 alias v="vim"
-alias local="./node_modules/.bin/zuul --local 9005 -- test/*.js"
 
 alias gum="cd ~/Code/gumroad/web"
 alias vs="vagrant ssh"
@@ -150,6 +149,7 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 alias bashrc='vim ~/.bashrc'
+alias simple_server='python -m SimpleHTTPServer'
 
 function gitvim {
   vim `git status | grep modified | awk '{print $3}'`
@@ -182,6 +182,24 @@ function db {
   fi
 }
 
+function convert_vid {
+  ffmpeg -i $1S$2E$3.mkv $1S$2E$3.mp4
+}
+
+function convert_vids {
+  for i in {1..24}
+  do
+    convert_vid $1 $2 $i
+  done
+}
+
+function convert_seasons {
+  for i in {6..8}
+  do
+    convert_vids $1 $i
+  done
+}
+
 function branch {
   echo $(git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3)
 }
@@ -198,6 +216,24 @@ function gplb {
 
 function gfpb {
   git push --force origin $(branch)
+}
+
+# From https://stackoverflow.com/questions/50940895/how-to-extract-mp4-video-from-m3u8-file
+function download-playlist() {
+    if [[ -n "$1" ]]; then
+        touch ./files.txt;
+        counter=1;
+        while read line; do
+            if [[ "$line" == "http"* ]]; then
+                curl --silent -o ${counter}.mp4 "$line";
+                echo "file ${counter}.mp4" >> ./files.txt;
+                ((counter++));
+            fi;
+        done < "$1";
+        ffmpeg -f concat -safe 0 -i ./files.txt -codec copy output.mp4;
+    else
+        echo 'Usage: download-playlist <file.m3u8>';
+    fi
 }
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -219,3 +255,9 @@ export PATH=${PATH}:~/bin
 export PATH="$PATH:/Applications/Android Studio.app/sdk/platform-tools"
 
 export PATH="$PATH:$HOME/.local/bin"
+
+export PATH="$PATH:/Library/Frameworks/R.framework/"
+
+alias r="/Library/Frameworks/R.framework/Resources/R"
+alias rsc="/Library/Frameworks/R.framework/Resources/Rscript"
+alias cd_ext_drive="cd /Volumes/Greg\'s\ External\ HD\ -\ Data/"
