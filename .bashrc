@@ -217,3 +217,5 @@ export PATH="/usr/local/share/python:$PATH"
 export PATH=${PATH}:~/bin
 
 export PATH="$PATH:/Applications/Android Studio.app/sdk/platform-tools"
+
+export PATH="$PATH:$HOME/.local/bin"
