@@ -29,3 +29,10 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
+
+
+# moving nvim config
+echo "Moving any existing dotfiles from ~ to $olddir"
+mv ~/nvim ~/dotfiles_old/
+echo "Creating symlink to $file in home directory."
+ln -s $dir/nvim .config/nvim

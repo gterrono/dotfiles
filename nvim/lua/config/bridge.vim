@@ -1,0 +1,1 @@
+/home/terrono/dotfiles/init.vim

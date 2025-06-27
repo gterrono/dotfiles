@@ -59,8 +59,9 @@ map! kj <Esc>
 " map! <left> <nop>
 " map! <right> <nop>
 
-map <tab> gt
-map <S-tab> gT
+" Removing this shortcut to enable tabout
+"map <tab> gt
+"map <S-tab> gT
 
 map :W :w
 map :Q :q
